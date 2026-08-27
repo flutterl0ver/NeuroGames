@@ -26,6 +26,13 @@ public class DialogueTrigger : MonoBehaviour
         }
 
         alreadyTriggered = true;
+
+        if (DialogueManager.Instance == null)
+        {
+            Debug.LogWarning("DialogueTrigger: не найден DialogueManager в сцене. Добавьте существующий объект с компонентом DialogueManager и назначьте ссылки через Inspector.");
+            return;
+        }
+
         DialogueManager.Instance.ShowDialogue(dialogueText);
     }
 }
