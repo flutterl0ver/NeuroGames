@@ -22,7 +22,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Button closeButton;
-
+    [SerializeField] private GameObject goToServers;
+    
     private bool isVisible;
 
     private void Awake()
@@ -55,6 +56,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        goToServers.SetActive(true);
         dialogueText.text = message;
         dialoguePanel.SetActive(true);
         PlayerController.SetMovementLocked(true);
