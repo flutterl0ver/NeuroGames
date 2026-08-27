@@ -34,5 +34,6 @@ public class DialogueTrigger : MonoBehaviour
         }
 
         DialogueManager.Instance.ShowDialogue(dialogueText);
+        ServerManager.singleton.SpawnServers();
     }
 }
