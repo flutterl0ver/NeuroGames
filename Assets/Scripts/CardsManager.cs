@@ -50,6 +50,10 @@ public class CardsManager : MonoBehaviour {
         PlayerController.SetMovementLocked(false);
         Server.CurrentServer.Deactivate();
         servers++;
-        if(servers == totalServers) returnText.SetActive(true);
+        if (servers == totalServers)
+        {
+            returnText.SetActive(true);
+            WinScreenTrigger.allCardsGathered = true;
+        }
     }
 }
