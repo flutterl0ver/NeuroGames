@@ -49,6 +49,10 @@ public class CardsManager : MonoBehaviour {
         window.SetActive(false);
         PlayerController.SetMovementLocked(true);
         servers++;
-        if(servers == totalServers) returnText.SetActive(true);
+        if (servers == totalServers)
+        {
+            returnText.SetActive(true);
+            WinScreenTrigger.allCardsGathered = true;
+        }
     }
 }
