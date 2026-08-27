@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CardsManager : MonoBehaviour {
     private int servers = 0;
     private int totalServers = 3;
+
+    public int GoodCards, BadCards;
 
     public static CardsManager Instance;
 
@@ -17,6 +20,9 @@ public class CardsManager : MonoBehaviour {
 
     [SerializeField]
     private Button closeButton;
+
+    [SerializeField]
+    private TextMeshProUGUI cardsText;
 
     private Card[] cards;
 
@@ -42,6 +48,13 @@ public class CardsManager : MonoBehaviour {
             card.gameObject.SetActive(card == selectedCard);
         }
         closeButton.gameObject.SetActive(true);
+        if(selectedCard.IsGood) {
+            GoodCards++;
+        } else {
+            BadCards++;
+        }
+
+        cardsText.text += selectedCard.Text + "\n\n";
     }
     
     public void Close() 
