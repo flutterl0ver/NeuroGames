@@ -57,6 +57,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueText.text = message;
         dialoguePanel.SetActive(true);
+        PlayerController.SetMovementLocked(true);
         isVisible = true;
     }
 
@@ -67,6 +68,7 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(false);
         }
 
+        PlayerController.SetMovementLocked(false);
         isVisible = false;
     }
 
