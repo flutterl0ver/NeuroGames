@@ -47,7 +47,8 @@ public class CardsManager : MonoBehaviour {
     public void Close() 
     {
         window.SetActive(false);
-        PlayerController.SetMovementLocked(true);
+        PlayerController.SetMovementLocked(false);
+        Server.CurrentServer.Deactivate();
         servers++;
         if(servers == totalServers) returnText.SetActive(true);
     }

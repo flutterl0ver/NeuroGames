@@ -189,6 +189,7 @@ public class MinigameManager : MonoBehaviour
         if (Score >= targetScore)
         {
             CloseWindow();
+            PlayerController.SetMovementLocked(true);
             OnWin();
         }
     }
@@ -233,6 +234,6 @@ public class MinigameManager : MonoBehaviour
 
     private void OnWin()
     {
-
+        CardsManager.Instance.Open();
     }
 }
