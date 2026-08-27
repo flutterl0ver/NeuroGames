@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Server : MonoBehaviour
 {
+    private bool active = false;
+    
     private void OnCollisionEnter(Collision other) {
+        if (!active) return;
+        
         if (other.gameObject.CompareTag("Player")) {
             MinigameManager.Instance.OpenWindow();
         }
@@ -11,7 +15,6 @@ public class Server : MonoBehaviour
     // activate component of 3 random servers
     public void Activate()
     {
-        var collider = GetComponent<BoxCollider>();
-        collider.enabled = true;
+        active = true;
     }
 }
